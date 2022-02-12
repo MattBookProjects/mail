@@ -27,7 +27,7 @@
                 <input class="form-control" id="compose-subject" placeholder="Subject">
             </div>
             <textarea class="form-control" id="compose-body" placeholder="Body"></textarea>
-            <input type="submit" class="btn btn-primary"/>
+            <input id="compose-submit" type="submit" class="btn btn-primary"/>
         </form>
     </div>
 {% endblock %}
@@ -35,3 +35,4 @@
 {% block script %}
     <script src="{% static 'mail/inbox.js' %}"></script>
 {% endblock %}
+
