@@ -6,7 +6,7 @@ textarea {
     min-height: 500px;
 }
 
-#emails-view {
+#mailbox-view {
     width: auto;
     padding: 0.5rem;
 }
@@ -17,7 +17,14 @@ textarea {
     padding: 0.5rem;
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
-    background-color: red;
     font-size: 2rem;
+}
+
+.read-email {
+    background-color: grey;
+}
+
+.unread-email {
+    background-color: white;
 }
 
