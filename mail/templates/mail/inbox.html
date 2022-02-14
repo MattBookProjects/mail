@@ -2,17 +2,28 @@
 {% load static %}
 
 {% block body %}
-    <h2>{{ request.user.email }}</h2>
+    <div class="user-email">{{ request.user.email }}</div>
+    
 
+
+    <div class="nav-container">
+        <button class="nav-item" id="inbox">Inbox</button>
+        <button class="nav-item" id="compose">Compose</button>
+        <button class="nav-item" id="sent">Sent</button>
+        <button class="nav-item" id="archived">Archived</button>
+        <div class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Log Out</a></div>
+    </div>
+    
+    <!--
     <button class="btn btn-sm btn-outline-primary" id="inbox">Inbox</button>
     <button class="btn btn-sm btn-outline-primary" id="compose">Compose</button>
     <button class="btn btn-sm btn-outline-primary" id="sent">Sent</button>
     <button class="btn btn-sm btn-outline-primary" id="archived">Archived</button>
     <a class="btn btn-sm btn-outline-primary" href="{% url 'logout' %}">Log Out</a>
-    <hr>
+    <hr>-->
 
+    <hr>
     <div id="mailbox-view">
-        CHUJ W DUPE
     </div>
 
     <div id="email-view">
@@ -21,6 +32,10 @@
         <div id="email-subject"></div>
         <div id="email-body"></div>
         <div id="email-timestamp"></div>
+        <div id="email-controls">
+            <button id="email-archive-control"></button>
+            <button id="email-reply-control">Reply</button>
+        </div>
     </div>
 
     <div id="compose-view">
