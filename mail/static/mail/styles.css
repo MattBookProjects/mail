@@ -6,15 +6,86 @@ textarea {
     min-height: 500px;
 }
 
+#compose-form{
+    width: 50%;
+}
+
+.composer-content{
+    display: grid;
+    grid-template-rows: repeat(4, 1fr) 5fr;
+}
+
 #mailbox-view {
     width: auto;
     padding: 0.5rem;
 }
 
-#email-view {
-    border: 1px solid black;
+#email-view{
+    padding: 0.5rem;
 }
 
+.email-button{
+    background-color: blue;
+    border: 1px solid black;
+    color: white;
+    font-size: 1.5rem;
+    min-width: 8em;
+    padding: 0.5rem;
+    font-weight: 500;
+}
+
+
+.email-container {
+    width : 50%;
+}
+
+.email-content{
+    display: grid;
+    grid-template-rows: repeat(4, 1fr) 5fr;
+}
+
+.email-controls{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    height: 100%;
+    align-items: flex-start;
+    margin-top: 0.5rem;
+}
+
+.email-meta-field{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    font-size: 2rem;
+}
+
+.email-field{
+    padding: 0.5rem;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.email-field:last-child{
+    border-bottom: 1px solid black;
+}
+
+.email-label{
+    font-weight: 700;
+    color: black;
+}
+
+.email-value{ 
+    font-weight: 500;
+    color: #101010;
+}
+
+#email-body{
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #202020;
+}
 
 
 .mailbox-item {

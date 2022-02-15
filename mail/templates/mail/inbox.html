@@ -27,31 +27,51 @@
     </div>
 
     <div id="email-view">
-        <div id="email-sender"></div>
-        <div id="email-recipients"></div>
-        <div id="email-subject"></div>
-        <div id="email-body"></div>
-        <div id="email-timestamp"></div>
-        <div id="email-controls">
-            <button id="email-archive-control"></button>
-            <button id="email-reply-control">Reply</button>
+        <div class="email-container">
+            <div class="email-content">
+                <div class="email-field email-meta-field">
+                    <div class="email-label">From: </div><div class="email-value" id="email-sender"></div>
+                </div>
+                <div class="email-field email-meta-field">
+                    <div class="email-label">To:</div><div class="email-value" id="email-recipients"></div>
+                </div>
+                <div class="email-field email-meta-field">
+                    <div class="email-label">Subject:</div><div class="email-value" id="email-subject"></div>
+                </div>
+                <div class="email-field email-meta-field">
+                    <div class="email-label">Sent on:</div><div class="email-value" id="email-timestamp"></div>
+                </div>
+                <div class="email-field">
+                    <div class="email-label"></div><div class="email-value" id="email-body"></div>
+                </div>
+            </div>
+            <div id="email-controls-container">
+                <div class="email-controls">
+                    <button class="email-button" id="email-archive-control"></button>
+                    <button class="email-button" id="email-reply-control">Reply</button>
+                </div>
+            </div>
         </div>
     </div>
 
     <div id="compose-view">
         <h3>New Email</h3>
         <form id="compose-form">
-            <div class="form-group">
-                From: <input disabled class="form-control" value="{{ request.user.email }}">
+            <div class="compose-content">
+                <div class="email-field email-meta-field">
+                    <div class="email-label">From:</div><input disabled class="email-value" value="{{ request.user.email }}">
+                </div>
+                <div class="email-field email-meta-field">
+                    <div class="email-label">To:</div><input id="compose-recipients" class="email-value">
+                </div>
+                <div class="email-field email-meta-field">
+                    <div class="email-label">Subject:</div><input class="email-value" id="compose-subject" placeholder="Subject">
+                </div>
+                <textarea class="email-field" id="compose-body" placeholder="Body"></textarea>
             </div>
-            <div class="form-group">
-                To: <input id="compose-recipients" class="form-control">
-            </div>
-            <div class="form-group">
-                <input class="form-control" id="compose-subject" placeholder="Subject">
-            </div>
-            <textarea class="form-control" id="compose-body" placeholder="Body"></textarea>
-            <input id="compose-submit" type="submit" class="btn btn-primary"/>
+            <div class="compose-control"></div>
+                <input id="compose-submit" type="submit" class="btn btn-primary"/>
+            </div>        
         </form>
     </div>
 {% endblock %}

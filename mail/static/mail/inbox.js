@@ -86,9 +86,9 @@ function load_email(id, mailbox){
     document.querySelector('#email-body').innerHTML = email.body;
     document.querySelector('#email-timestamp').innerHTML = email.timestamp;
     if (mailbox === 'sent'){
-      document.querySelector('#email-controls').style.display='none';
+      document.querySelector('#email-controls-container').style.display='none';
     } else {
-      document.querySelector('#email-controls').style.display = 'block';
+      document.querySelector('#email-controls-container').style.display = 'block';
       document.querySelector('#email-archive-control').innerHTML = email.archived ? 'Unarchive' : 'Archive';
       document.querySelector('#email-archive-control').addEventListener('click', () => {   
           fetch(`emails/${id}`, { 
