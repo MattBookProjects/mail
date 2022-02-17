@@ -55,24 +55,27 @@
     </div>
 
     <div id="compose-view">
-        <h3>New Email</h3>
-        <form id="compose-form">
-            <div class="compose-content">
-                <div class="email-field email-meta-field">
-                    <div class="email-label">From:</div><input disabled class="email-value" value="{{ request.user.email }}">
+        <div class="compose-container">
+            <div class="page-header">New Email</div>
+            <div class="error-message" id="compose-error"></div>
+            <div id="compose-form">
+                <div class="compose-content">
+                    <div class="email-field email-meta-field">
+                        <div class="email-label">From:</div><input disabled class="email-value" value="{{ request.user.email }}">
+                    </div>
+                    <div class="email-field email-meta-field">
+                        <div class="email-label">To:</div><input id="compose-recipients" class="email-value">
+                    </div>
+                    <div class="email-field email-meta-field">
+                        <div class="email-label">Subject:</div><input class="email-value" id="compose-subject">
+                    </div>
+                    <textarea class="email-field" id="compose-body"></textarea>
                 </div>
-                <div class="email-field email-meta-field">
-                    <div class="email-label">To:</div><input id="compose-recipients" class="email-value">
-                </div>
-                <div class="email-field email-meta-field">
-                    <div class="email-label">Subject:</div><input class="email-value" id="compose-subject" placeholder="Subject">
-                </div>
-                <textarea class="email-field" id="compose-body" placeholder="Body"></textarea>
+                <div class="email-controls">
+                    <button class="email-button" id="compose-submit">Send</button>
+                </div>        
             </div>
-            <div class="compose-control"></div>
-                <input id="compose-submit" type="submit" class="btn btn-primary"/>
-            </div>        
-        </form>
+        </div>
     </div>
 {% endblock %}
 

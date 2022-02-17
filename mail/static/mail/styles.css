@@ -10,9 +10,19 @@ textarea {
     width: 50%;
 }
 
-.composer-content{
+.compose-container{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.compose-content{
     display: grid;
-    grid-template-rows: repeat(4, 1fr) 5fr;
+    grid-template-rows: repeat(3, 1fr) 5fr;
+}
+
+#compose-view{
+    padding: 0.5rem;
 }
 
 #mailbox-view {
@@ -58,6 +68,7 @@ textarea {
     display: grid;
     grid-template-columns: 1fr 4fr;
     font-size: 2rem;
+    align-items: center;
 }
 
 .email-field{
@@ -65,6 +76,7 @@ textarea {
     border-top: 1px solid black;
     border-left: 1px solid black;
     border-right: 1px solid black;
+    width: 100%;
 }
 
 .email-field:last-child{
@@ -79,9 +91,10 @@ textarea {
 .email-value{ 
     font-weight: 500;
     color: #101010;
+    font-size: 2rem;
 }
 
-#email-body{
+#email-body, #compose-body{
     font-size: 1.5rem;
     font-weight: 400;
     color: #202020;
@@ -146,7 +159,7 @@ textarea {
     font-size: 2rem;
 }
 
-.mailbox-name{
+.page-header{
     padding: 0.5rem;
     font-weight: 600;
     font-size: 2rem;
@@ -167,4 +180,39 @@ textarea {
 .mailbox-timestamp{
     font-weight: 300;
     color: #202020;
+}
+
+.log-reg-container{
+    padding: 0.5rem;
+    margin: auto;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.log-reg-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 0.5rem;
+}
+
+.log-reg-bar{
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    border: 1px solid black;
+}
+
+.log-reg-button{
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    align-self: flex-start;
+    width: 25%;
+    background-color: #ff6f6f;
+    border: 1px solid black;
+}
+
+.error-message{
+    color: red;
 }
