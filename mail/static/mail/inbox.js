@@ -93,22 +93,29 @@ function load_email(id, mailbox){
 } 
 
 async function send_email(){
-  const response = await fetch('emails', {
-    method: 'POST',
-    body: JSON.stringify({
-      subject: document.querySelector('#compose-subject'). value,
-      body: document.querySelector('#compose-body'). value,
-      recipients: document.querySelector('#compose-recipients').value
-    })
-  });
-  if( response.status === 400 ){
-    const data = await response.json();
-    document.querySelector('#compose-error').innerHTML = `${data.error}`;
+  if( document.querySelector('#compose-subject').value === '' ){
+    document.querySelector('#compose-error').innerHTML = 'Subject can\'t be empty';
     document.querySelector('#compose-error').style.display = 'block';
-  } else if( response.status === 201 ){
-    load_mailbox('sent');
-  }
-
+  } else if( document.querySelector('#compose-body').value === ''){
+    document.querySelector('#compose-error').innerHTML = 'Body can\'t be empty';
+    document.querySelector('#compose-error').style.display = 'block';
+  } else {
+      const response = await fetch('emails', {
+        method: 'POST',
+        body: JSON.stringify({
+          subject: document.querySelector('#compose-subject').value,
+          body: document.querySelector('#compose-body').value,
+          recipients: document.querySelector('#compose-recipients').value
+        })
+      });
+      if( response.status === 400 ){
+        const data = await response.json();
+        document.querySelector('#compose-error').innerHTML = `${data.error}`;
+        document.querySelector('#compose-error').style.display = 'block';
+      } else if( response.status === 201 ){
+        load_mailbox('sent');
+      }
+    }
 }
 
 function archive_email(email, id){
